@@ -29,6 +29,11 @@ A continuación se describe cada uno de los trabajos prácticos incluidos en est
     * Vectorización de documentos usando **TF-IDF**.
     * Análisis de similitud entre documentos y palabras mediante **similitud de coseno**.
     * Entrenamiento y optimización de modelos de clasificación **Naive Bayes (Multinomial y Complement)**, evaluando diferentes configuraciones de n-gramas y filtrado de frecuencia.
+* **Métricas y Resultados Clave:**
+    * **Métrica Principal:** F1-Score (Macro) para la tarea de clasificación.
+    * **Resultado:** Se alcanzó un **F1-Score de 0.7127** en el conjunto de prueba. La mejor combinación fue el modelo `ComplementNB` con un `alpha` de 0.2, utilizando un vectorizador TF-IDF que consideraba tanto unigramas como bigramas.
+    * **Análisis de Similitud:** El modelo demostró que la similitud de coseno es altamente efectiva para encontrar documentos de la misma categoría cuando el tema es muy específico (ej. `sci.med`), con scores de hasta **0.57**.
+
 
 ### [Desafío 2: Creación de Embeddings con Gensim (Word2Vec)](./Desafio2/Jose_Perez_19co_PLN_Desafio_2.ipynb)
 
@@ -39,6 +44,9 @@ A continuación se describe cada uno de los trabajos prácticos incluidos en est
     * Entrenamiento de un modelo **Word2Vec (Skip-gram)** con Gensim.
     * Evaluación de la calidad de los embeddings mediante pruebas de **similitud de palabras y analogías** (ej. "rey - hombre + mujer = reina").
     * Visualización del espacio vectorial de palabras con **t-SNE**.
+* **Métricas y Resultados Clave:**
+    * **Métrica Principal:** Evaluación cualitativa mediante similitud semántica y resolución de analogías.
+    * **Resultado:** El modelo logró agrupar exitosamente conceptos relacionados. Por ejemplo, para "congreso", los términos más cercanos fueron "diputados", "cámara" y "senado". En analogías, pudo resolver por ejemplo `rey + reina - hombre`, obteniendo como resultado "emérito" y "monarca", demostrando que capturó relaciones semánticas complejas.
 
 ### [Desafío 3: Modelo de Lenguaje a Nivel de Caracter con RNNs](./Desafio3/Jose_Perez_19co_PLN_Desafio_3.ipynb)
 
@@ -51,6 +59,11 @@ A continuación se describe cada uno de los trabajos prácticos incluidos en est
     * Generación de texto nuevo utilizando diferentes estrategias de decodificación:
         * **Greedy Search**.
         * **Beam Search (Determinista y Estocástico)**, explorando el efecto de la **temperatura** para controlar la creatividad del texto.
+* **Métricas y Resultados Clave:**
+    * **Métricas Principales:** Perplejidad, Loss y Accuracy. La perplejidad mide qué tan bien el modelo predice una muestra de texto.
+    * **Resultado:** El modelo **LSTM superó al SimpleRNN**, logrando una perplejidad de validación más baja (~4.5) y una precisión final del **55.3%**.
+    * **Generación de Texto:** La generación con **Beam Search** produjo texto significativamente más coherente que Greedy Search. El uso de **temperatura** permitió controlar la creatividad, generando desde texto conservador (temp=0.5) hasta texto más aleatorio y creativo (temp=2.0).
+
 
 ### [Desafío 4: Chatbot Conversacional con Seq2Seq y LSTMs](./Desafio4/Jose_Perez_19co_PLN_Desafio_4.ipynb)
 
@@ -61,6 +74,10 @@ A continuación se describe cada uno de los trabajos prácticos incluidos en est
     * Modelo **Encoder-Decoder** para mapear secuencias de entrada (preguntas) a secuencias de salida (respuestas).
     * Uso de **embeddings pre-entrenados (FastText)** para mejorar la representación semántica de las palabras.
     * Implementación de un bucle de **inferencia** para generar respuestas a nuevas entradas de texto.
+* **Métricas y Resultados Clave:**
+    * **Métricas Principales:** Accuracy y evaluación cualitativa de las respuestas generadas.
+    * **Resultado:** El entrenamiento mostró signos de overfitting. En la **época 19**, se alcanzó la pérdida de validación (`val_loss`) mínima de **1.4001**. A partir de ese punto, esta métrica comenzó a incrementar, indicando que el modelo perdía capacidad de generalización.
+    * **Análisis de Inferencia:** El bot fue capaz de generar respuestas simples y contextuales (ejemplo `yes i do`), pero tendió a caer en respuestas repetitivas y genéricas (ejemplo `i am a teacher`), indicando la necesidad de un dataset más grande y diverso para mejorar la generalización.
 
 ## ⚙️ Cómo Ejecutar el Proyecto
 
