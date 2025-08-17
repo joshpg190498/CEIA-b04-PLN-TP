@@ -53,7 +53,7 @@ A continuación se describe cada uno de los trabajos prácticos incluidos en est
         * **Beam Search (Determinista y Estocástico)**, explorando el efecto de la **temperatura** para controlar la creatividad del texto.
 
 ### [Desafío 4: Chatbot Conversacional con Seq2Seq y LSTMs](./Desafio4/Jose_Perez_19co_PLN_Desafio_4.ipynb)
-|
+
 * **Objetivo:** Desarrollar un bot conversacional (QA Bot) capaz de generar respuestas a preguntas usando una arquitectura Encoder-Decoder.
 * **Dataset:** Corpus de conversaciones en inglés del challenge `ConvAI2`.
 * **Técnicas Clave:**
@@ -68,7 +68,7 @@ Para explorar los notebooks y ejecutar el código:
 
 ### Instalación y Ejecución
 
-5.  **Google Colab**
+1.  **Google Colab**
     Dado que el proyecto fue desarrollado en Colab, la forma más sencilla de ejecutarlo es subir cada archivo `.ipynb` a tu Google Drive, abrirlo con Google Colaboratory y ejecutarlo directamente, aprovechando las GPUs gratuitas.
 
 ## 👤 Autor
